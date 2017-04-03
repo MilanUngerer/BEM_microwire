@@ -8,9 +8,9 @@ This work is oriented to find the optimal configuration of the micro-wires to ma
 
 For the calculation of the field the Helmholtz equation was used through its boundary integral formulation which allows a simpler manipulation for the calculate of the field and to realize the interaction between the different obstacles. Because this equation does not have an analytical solution it is necessary to approximate it by means of some numerical method, in this work we used the Boundary Element Method with, the library for Python, BEM ++.
 
-The optimal configuration is studied under 2 experiments, the first one corresponds to varying the distance of the wires with screen configuration. Another alternative is to study how the received signal changes according the change of the volumetric composition of th wires in the composite.
+The optimal configuration is studied under 3 experiments, the first one corresponds to varying the distance of the wires in a formation of the type screen. Another alternative is to study how the received signal changes as a function of the number of rows of microwires in the array. Finally the change in the volumetric composition of wires in the composite is studied.
 
-In the case of a screen configuration it can be seen that there is a maximum signal change when the wires are closer together in the center, so it would be advisable to position the wires as close as possible. In addition, it can be seen that for the volumetric percentage have a maximum with 4 wires reaching a change of around -90%.
+In the case of a screen configuration it can be seen that exist a maximum signal change of 14.84% when the wires are at 1.6 [mm] spacing. In addition, it can be observed that for the case of the study of the volumetric percentage there is a maximum when there are 6 wires reaching a change of around 4.28%. For the case of adding more rows, we don't see any significant changes or bibliography in this regard. The recommendation is to use 6 wires with a spacing of 1.6 [mm].
 
 The main limitations of the program is that due to the particular properties of the inserted conductors it's difficult to achieve the convergence of the program. 
 
