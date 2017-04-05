@@ -98,7 +98,7 @@
 		\vspace*{0.15in}
 		\centering\normalsize \textbf{PROFESOR CORREFERENTE: \hspace{1cm} ALEJANDRO PACHECO SANJUAN}\\
 		\vspace*{1in}
-		\centering\normalsize \textbf{MARZO - 2017}\\
+		\centering\normalsize \textbf{ABRIL - 2017}\\
 	\end{center}
 	
 \end{titlepage}
@@ -125,11 +125,9 @@ Este trabajo está orientado a encontrar la configuración óptima de los micro-
 
 Para el cálculo del campo se utilizó la ecuación de Helmholtz por medio de su formulación integral de borde lo que permite una manipulación mas simple al momento de calcular el campo y realizar la interacción entre los diferentes obstáculos. Debido a que esta ecuación no posee una solución analítica es necesario aproximarla por medio de algún método numérico, en este trabajo se utilizó el método de elementos de borde a través de, la librería para Python, BEM++.
 
-La configuración óptima es estudiada bajo 2 experimentos, el primero corresponde a variar la distancia de los hilos en una formación del tipo pantalla. Otra alternativa es estudiar como cambia la señal recibida en función del cambio de la composición volumétrica de hilos en el compósito.
+La configuración óptima es estudiada bajo 3 experimentos, el primero corresponde a variar la distancia de los hilos en una formación del tipo pantalla. Otra alternativa es estudiar como cambia la señal recibida en función del número de filas de hilos en la matriz. finalmente se estudia el cambio de la composición volumétrica de hilos en el compósito.
 
-Para el caso de una configuración de pantalla se puede apreciar que existe un máximo de cambio de señal cuando los hilos se encuentran más juntos en el centro, por lo que se recomendaría posicionar los hilos lo más cerca posible. Además, se puede observar que para el caso del estudio del porcentaje volumétrico existe un máximo cuando se tienen 4 hilos alcanzando un cambio de alrededor -90\%.
-
-Las principales limitantes que presenta el programa es que debido a las particulares propiedades de los conductores insertos es difícil lograr la convergencia del programa.\\
+Para el caso de una configuración de pantalla se puede apreciar que existe un máximo de cambio de señal de 14.84 \% cuando los hilos se encuentran a 1.6[mm] de espaciamiento. Además, se puede observar que para el caso del estudio del porcentaje volumétrico existe un máximo cuando se tienen 6 hilos alcanzando un cambio de alrededor 4.28\%. Para el caso de añadir más filas no se ven cambios considerables ni bibliografía al respecto. La recomendación es de utilizar 6 hilos con un distanciamiento de 1.6 [mm].\\
 
 \noindent\textbf{Palabras claves:} Método de Elementos de Borde, BEM, BEM++, Micro-hilos, Sensor,\\ Dispersión Múltiple.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -141,11 +139,9 @@ This work is oriented to find the optimal configuration of the micro-wires to ma
 
 For the calculation of the field the Helmholtz equation was used through its boundary integral formulation which allows a simpler manipulation for the calculate of the field and to realize the interaction between the different obstacles. Because this equation does not have an analytical solution it is necessary to approximate it by means of some numerical method, in this work we used the Boundary Element Method with, the library for Python, BEM ++.
 
-The optimal configuration is studied under 2 experiments, the first one corresponds to varying the distance of the wires with screen configuration. Another alternative is to study how the received signal changes according the change of the volumetric composition of th wires in the composite.
+The optimal configuration is studied under 3 experiments, the first one corresponds to varying the distance of the wires in a formation of the type screen. Another alternative is to study how the received signal changes as a function of the number of rows of microwires in the array. Finally the change in the volumetric composition of wires in the composite is studied.
 
-In the case of a screen configuration it can be seen that there is a maximum signal change when the wires are closer together in the center, so it would be advisable to position the wires as close as possible. In addition, it can be seen that for the volumetric percentage have a maximum with 4 wires reaching a change of around -90\%.
-
-The main limitations of the program is that due to the particular properties of the inserted conductors it's difficult to achieve the convergence of the program. \\
+In the case of a screen configuration it can be seen that exist a maximum signal change of 14.84 \% when the wires are at 1.6 [mm] spacing. In addition, it can be observed that for the case of the study of the volumetric percentage there is a maximum when there are 6 wires reaching a change of around 4.28 \%. For the case of adding more rows, we don't see any significant changes or bibliography in this regard. The recommendation is to use 6 wires with a spacing of 1.6 [mm].\\
 
 \noindent\textbf{Keywords:} Boundary Element Method, BEM, BEM++, Micro-wires, Sensor,\\ Multiple Scattering.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -203,7 +199,7 @@ Las ventajas principalmente consisten en el tratamiento de ecuaciones con domini
 discretización del contorno y no de todo el dominio. Además, el tratamiento numérico de problemas con dominios no enlazados es más simple con
 métodos de ecuaciones integrales. Debido a las grandes ventajas y aplicaciones que posee este método, se desarrolló un proyecto, llamado BEM++, que combina los avances más recientes en el cálculo numérico del método de elementos de borde en una librería libre y fácil de usar, principalmente para el desarrollo de ecuaciones de LaPlace, Helmholtz y Maxwell. La librería está basada en lenguaje C++ con interfaz en Python para un mejor control.
 
-En este trabajo se desarrollará un método para resolver la dispersión de ondas electromagnéticas producto de la colisión con un material compuesto por una matriz dieléctrica y microhilos ferromagnéticos, esto a través de una aproximación a las ecuaciones de Maxwell por medio de la ecuación de Helmholtz. La resolución de la ecuación de Helmholtz se realizará a través del método de elementos de borde y un programa computacional creado a partir de la librería BEM++. Otro método se puede ver en la referencia \cite{Wire_theory_2}. Una vez desarrollado el método de resolución se utilizará este para experimentar y encontrar la configuración óptima de los hilos al interior del compósito. 
+En este trabajo se desarrollará un método para resolver la dispersión de ondas electromagnéticas producto de la colisión con un material compuesto por una matriz dieléctrica y micro-hilos ferromagnéticos, esto a través de una aproximación a las ecuaciones de Maxwell por medio de la ecuación de Helmholtz. La resolución de la ecuación de Helmholtz se realizará a través del método de elementos de borde y un programa computacional creado a partir de la librería BEM++. Otro método se puede ver en la referencia \cite{Wire_theory_2}. Una vez desarrollado el método de resolución se utilizará este para experimentar y encontrar la configuración óptima de los hilos al interior del compósito. 
 
 Los objetivos principales son:
 
@@ -405,7 +401,7 @@ Como sabemos a partir de $(i)$ y $(iii)$, $\triangledown\cdot E = 0$ y $\triangl
 \label{eq: ecuacion reducida magnetica}
 \end{equation}
 
-Ahora, considerando la velocidad de la luz en el vacio,
+Ahora, considerando la velocidad de la luz en el vacío,
 
 $$c = \frac{1}{\sqrt{\mu_0\epsilon_0}} \approx 3\times10^8\left[\frac{m}{s}\right]$$
 
@@ -1031,7 +1027,7 @@ En este caso se utilizará la definición para un campo eléctrico por lo que el
 
 $$n = \frac{\sqrt{\mu_i\epsilon_i}}{\sqrt{\mu_0\epsilon_0}}$$
 
-Donde, $\mu_i$ y $\epsilon_i$ corresponden a la permeabilidad y permitividad de los hilos o la matriz. Es necesario conocer las propiedades de la matriz y los hilos definidas en las sección \ref{subsec Microhilos ferromagneticos} y calculadas respecto a las relaciones planteadas. Para la toma de datos se utilizará una frecuencia de 10[GHz] y la amplitud del campo utilizado tiene un valor de 1 [$N\cdot C^{-1}$], además, el receptor se encontrará 10[mm] aguas abajo del compósito.
+Donde, $\mu_i$ y $\epsilon_i$ corresponden a la permeabilidad y permitividad de los hilos o la matriz. Es necesario conocer las propiedades de la matriz y los hilos definidas en las sección \ref{subsec Microhilos ferromagneticos} y calculadas respecto a las relaciones planteadas. Para la toma de datos se utilizará una frecuencia de 4[GHz] y la amplitud del campo utilizado tiene un valor de 1 [$N\cdot C^{-1}$], además, el receptor se encontrará 10[mm] aguas abajo del compósito.
 
 Las propiedades magnéticas de los hilos a utilizar se pueden deducir de las ecuaciones (\ref{permitividad}) y (\ref{permeabilidad}). Para el caso de la permitividad es necesario despejar el valor de una ecuación no lineal por lo que es necesario utilizar algún método iterativo.
 
@@ -1051,7 +1047,7 @@ Utilizando la ecuación (\ref{permeabilidad}) es posible graficar el valor de la
 	\label{fig:wire_permeability}
 \end{figure}
 
-Se puede ver que al aumentar la frecuencia la permeabilidad del hilo tiende a la unidad, perdiendo así sus propiedades magnéticas. Como estos valores se pueden obtener directamente de una función se utilizarán los valores exactos para frecuencia utilizada de 10[GHz].
+Se puede ver que al aumentar la frecuencia la permeabilidad del hilo tiende a la unidad, perdiendo así sus propiedades magnéticas. Como estos valores se pueden obtener directamente de una función se utilizarán los valores exactos para frecuencia utilizada de 4[GHz].
 
 Una vez definidas las condiciones del problema es necesario llevar el planteamiento matemático a un programa computacional que sea capaz de resolverlo en términos numéricos. El sistema de ecuaciones a resolver para ``$n$'' hilos insertos en una matriz se puede ver en la página siguiente.
 
@@ -1250,16 +1246,19 @@ Al resolver el sistema de ecuaciones es posible utilizar la solución para obten
 $$u_{ext}(\textbf{r})=\left[D u^{ext}_s\right](\textbf{r}) - \left[S \frac{\partial u^{ext}_s}{\partial n}\right](\textbf{r}) + u_{inc}(\textbf{r})$$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Diseño de experimentos}
-Con la finalidad de comparar más de una opción al momento de ubicar los microhilos en la matriz, se considerarán 2 posibles experimentos:
+Con la finalidad de comparar más de una opción al momento de ubicar los microhilos en la matriz, se considerarán 3 posibles experimentos:
 
 \begin{itemize}
 	\item Pantalla
+	\item Bloque
 	\item Composición volumétrica
 \end{itemize}
 
 El primero de ellos, llamado pantalla representa sólo una fila de hilos distanciados por una longitud variable. Al existir menos distancia entre hilos estos se encontrarán concentrados en el centro de la matriz, a medida que aumente la distancia se encontrarán mejor distribuidos en la matriz.
 
-Otro parámetro que variará en las mediciones será la cantidad de conductores (micro-hilos) que estarán insertos en la matriz. La comparación se realizará a través del porcentaje volumétrico que los hilos presenten ante la matriz. 
+Otro experimento a realizar corresponde a medir el cambio del campo en función del número de filas de micro-hilos ubicados al interior de la matriz.
+
+Finalmente, el último parámetro a variar en las mediciones será la cantidad de conductores (micro-hilos) que estarán insertos en la matriz. La comparación se realizará a través del porcentaje volumétrico que los hilos presenten ante la matriz. 
 
 Se realizarán las diferentes pruebas con la misma malla de hilos y matriz con la finalidad de que los resultados sean comparables.
 
@@ -1325,7 +1324,7 @@ En el gráfico \ref{fig:Permitividad_esfuerzo} se muestra como varía la permiti
 	\label{fig:permittivitychange}
 \end{figure} 
 
-Luego de obtener el cambio de la permitividad es necesario aplicarlo a los datos mostrados en la figura \ref{fig:efectivo}, para esto se utilizará el mayor promedio obtenido de la figura \ref{fig:permittivitychange}. Para el caso de la parte real corresponde a -9.14\% y para el caso de la parte imaginaria a 116.67\% correspondientes a  4.7[GHz]. Estos valores serán aplicados respectivamente en la gráfica \ref{fig:efectivo} para luego calcular los valores del hilo a través de (\ref{permitividad}) (figura \ref{fig:permittivitycstress}).
+Luego de obtener el cambio de la permitividad es necesario aplicarlo a los datos mostrados en la figura \ref{fig:efectivo}, para esto se utilizará el mayor promedio obtenido de la figura \ref{fig:permittivitychange}. Para el caso de la parte real corresponde a -9.14\% y para el caso de la parte imaginaria a 116.67\% correspondientes a  4.7[GHz]. Estos valores serán aplicados respectivamente en la gráfica \ref{fig:efectivo} para luego calcular los valores del hilo a través de la ec. (\ref{permitividad}) (figura \ref{fig:permittivitycstress}).
 
 \begin{figure}[H]
 	\centering\includegraphics[scale=1.]{Imagenes/wire_permittivity_stress.png}\\
@@ -1333,13 +1332,21 @@ Luego de obtener el cambio de la permitividad es necesario aplicarlo a los datos
 	\label{fig:permittivitycstress}
 \end{figure} 
 
-Con estos valores ya se tiene toda la información necesaria para realizar las pruebas y obtener resultados. La metodología consiste principalmente en calcular el campo en la antena, aguas abajo del compósito, con los datos de la permitividad sin ser sometida a ningún esfuerzo mecánico, luego se realizará el mismo procedimiento pero esta vez cambiando las propiedades eléctricas del material de acuerdo a la figura \ref{fig:permittivitycstress}. Esto se realizará multiples veces con diferentes distancias entre hilos y porcentajes volumétricos.
+Con estos valores ya se tiene toda la información necesaria para realizar las pruebas y obtener resultados. La metodología consiste principalmente en calcular el campo en la antena, aguas abajo del compósito, con los datos de la permitividad sin ser sometida a ningún esfuerzo mecánico, luego se realizará el mismo procedimiento pero esta vez cambiando las propiedades eléctricas del material de acuerdo a la figura \ref{fig:permittivitycstress}. Esto se realizará multiples veces con diferentes distancias entre hilos, número de filas y porcentajes volumétricos. Los resultados serán comparados en función del porcentaje de cambio entre ambos valores obtenidos.
 
 Las mallas a utilizar se nombraron según su funcionalidad y propiedades, para el caso de los hilos de pantalla se utilizó la siguiente nomenclatura,
 
 $$PH1\_a5\_l10\_E5550\_D2.msh$$
 
-La letra $P$ significa que se trata de un caso de ``Pantalla'', la letra $H$ se refiere a que corresponde a un hilo y el número $1$ significa que el hilo se encuentra en la posición 1 de la pantalla. El número que acompaña a la letra $a$ corresponde al radio del hilo en micrómetros, aquel que acompaña a la letra $l$ hace alusión al largo del hilo en $[mm]$, los números acompañantes a la letra $E$ significan el número de elementos de la malla y finalmente la letra $D$ es la distancia que habrá entre los hilos en milímetros. Todos los hilos poseen 5550 elementos. La matriz tiene la siguiente expersión,
+La letra $P$ significa que se trata de un caso de ``Pantalla'', la letra $H$ se refiere a que corresponde a un hilo y el número $1$ significa que el hilo se encuentra en la posición 1 de la pantalla. El número que acompaña a la letra $a$ corresponde al radio del hilo en micrómetros, aquel que acompaña a la letra $l$ hace alusión al largo del hilo en $[mm]$, los números acompañantes a la letra $E$ significan el número de elementos de la malla y finalmente la letra $D$ es la distancia que habrá entre los hilos en milímetros.
+
+Para el caso del estudio del cambio del campo en función del número de filas se utilizaron mallas con la nomenclatura que se puede ver a continuación: 
+
+$$BH11\_a5\_l10\_E5550.msh$$
+
+La letra $B$ muestra que se trata de una configuración de bloque. Los número $11$ corresponde a la fila y la columna en que esta ubicada la malla, en este caso fila 1 y columna 1.
+
+Todos los hilos poseen 5550 elementos. La matriz tiene la siguiente expersión,
 
 $$matriz\_12x12x300\_E16772.msh$$
 
@@ -1347,7 +1354,7 @@ El ancho y el alto se encuentran escritos en milímetros y tienen un valor de 12
 
 \begin{itemize}
 	\item Amplitud de campo: 1$[N\cdot C^{-1}]$
-	\item Frecuencia: 10 [GHz]
+	\item Frecuencia: 4 [GHz]
 	\item Distancia a receptor: 10 [mm]
 \end{itemize}
 
@@ -1370,30 +1377,42 @@ En este trabajo se utilizó un computador con las siguientes características:
 	\item Versión BEM++: 3.0.3
 \end{itemize}
 
-Para una frecuencia de 10[GHz] se puede obtener una longitud de onda ($\lambda$) de 29,98 [mm] lo que es del orden del largo del hilo, como se especifica en \cite{Wire_theory_1,Wire_theory_2}, además, las propiedades mostradas en la tabla siguiente,\\
+Para una frecuencia de 4[GHz] se puede obtener una longitud de onda ($\lambda$) de 74.95 [mm], un número de onda en el vacío de $8.383\times10^{-5}$, además, las propiedades mostradas en la tabla siguiente,\\
 
 \hspace{-15mm}
-\begin{tabular}{ |p{4.78cm}||p{4.5cm}|p{4.5cm}|p{3cm}|  }
+\begin{tabular}{ |p{4.78cm}||p{4.6cm}|p{4.8cm}|p{3cm}|  }
 	\hline
 	\multicolumn{4}{|c|}{\textbf{Tabla de valores}} \\
 	\hline
 	\textbf{Propiedad} & \textbf{Hilo sin tensión} & \textbf{Hilo con tensión} & \textbf{Matriz}\\
 	\hline
-	Permitividad ($\epsilon$) [-]  & -25589.156-131017.274 i   & 82629.268-200138.221 i & 16\\
-	Permeabilidad ($\mu$) [-]&   -2.921+0.590 i  & -2.921+0.590 i & 1\\
-	Índice de refracción ($n$) [-] & 524.327+350.611 i & 510.829+619.966 i & 4\\
-	Índice de transmisión ($\alpha$) [-]   & -2.921+0.590 i & -2.921+0.590 i & 1\\
-	Número de onda ($k$) [$\mu m^{-1}$] & 0.440+0.294 i & 0.428+0.520 i &$8.38\times 10^{-4}$\\
+	Permitividad ($\epsilon$) [-]  & 400430,875-1139694,314 i   & 1307905,551-1149128,375 i & 16,0\\
+	Permeabilidad ($\mu$) [-]&   -21,941+7,218 i  & -21,941+7,218 i & 1,0\\
+	Índice de refracción ($n$) [-] & 3697,485+3772,366 i & 3147,337+5505,268 i & 4,0\\
+	Índice de transmisión ($\alpha$) [-]   & -21,941+7,218 i & -21,941+7,218 i & 1,0\\
+	Número de onda ($k$) [$\mu m^{-1}$] & 1,240+1,265j & 1,055+1,846 i &$3.35\times 10^{-4}$\\
 	\hline
 \end{tabular}
 \\\\
 
-Para las pruebas se utilizó el orden de cuadratura de 6 (por defecto), además, una tolerancia de $10^{-5}$ para la multiplicación matriz-vector a través de GMRES.
+Para las pruebas se utilizó el orden de cuadratura de 6 (por defecto), además, una tolerancia de $10^{-5}$ para la multiplicación matriz-vector a través de GMRES. El máximo de iteraciones está fijado en 50.000 y el valor para el ``restart'' de 5.000. Este último parámetro es muy importante al momento de la convergencia ya que si el valor del ``restart'' es bajo la convergencia no es alcanzada de manera satisfactoria. La recomendación para este caso es fijarlo en un valor alto para no ser ejecutado ya que el valor por defecto es de 20 iteraciones.
 
 \pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Variación del campo variando la distancia entre hilos}
-En esta sección se mostrarán los resultados obtenidos al variar la distancia entre los hilos bajo una configuración de pantalla. El número de hilos se mantiene constante durante la experimentación por lo que a menor cantidad se encontrarán concentrados principalmente en el centro de la matriz, a medida que aumenta la distancia entre los hilos estos se encontrarán distribuidos de mejor manera en la matriz. En esta sección se utilizará una configuración de tipo pantalla compuesta por 6 hilos modelados como cilindros de 10[$\mu m$] de diámetro y 10[mm] de largo. Con estos valores se tiene una composición volumétrica de 0.011\%.
+En esta sección se mostrarán los resultados obtenidos al variar la distancia entre los hilos bajo una configuración de pantalla. El número de hilos se mantiene constante durante la experimentación por lo que a menor cantidad se encontrarán concentrados principalmente en el centro de la matriz, a medida que aumenta la distancia entre los hilos estos se encontrarán distribuidos de mejor manera en la matriz. En esta sección se utilizará una configuración de tipo pantalla compuesta por 6 hilos modelados como cilindros de 10[$\mu m$] de diámetro y 10[mm] de largo (según \cite{Wire_theory_1}). Con estos valores se tiene una composición volumétrica de 0.011\%.
+
+Al examinar los resultados con y sin tensión, es necesario comparar además, el módulo de los campos obtenidos, el módulo de un número complejo $z$ se define como:
+
+$$|z| = \sqrt{\left[Re(z)\right]^2+\left[Im(z)\right]^2}$$
+
+Donde $Re(z)$ y $Im(z)$ representan la parte real e imaginaria respectivamente. El valor del módulo es un parámetro de importancia debido a que este se utilizará en la comparación entre los campos con y sin tensión aplicada. El módulo representa la amplitud de la onda $u(\textbf{r})$ en la siguiente ecuación:
+
+$$\textbf{U}(\textbf{r},t) = u(\textbf{r})e^{-i\omega t}$$ 
+
+El cambio entre los campos serán comparados a través de:
+
+$$\frac{C_{ss}-C_{cs}}{C_{ss}} = Cambio\quad de\quad campo$$
 
 \begin{figure}[H]
 	\centering\includegraphics[scale=0.6]{Imagenes/field_screen_comparision.png}\\
@@ -1403,7 +1422,7 @@ En esta sección se mostrarán los resultados obtenidos al variar la distancia e
 	\caption{Campo y variación del campo obtenido 10[mm] aguas abajo del compósito en función del cambio de distancia entre hilos}
 	\label{fig:field_change}
 \end{figure}
-\pagebreak 
+ 
 Una vez ejecutado el programa ``ejecutor.py'' se puede encontrar en la carpeta un gráfico con la convergencia del programa como el que se puede ver a continuación,
 
 \begin{figure}[H]
@@ -1413,8 +1432,22 @@ Una vez ejecutado el programa ``ejecutor.py'' se puede encontrar en la carpeta u
 \end{figure} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Variación del campo en función del número de filas}
+
+A continuación se presentan los resultados de la variación del campo eléctrico en función del número de filas. Cada fila contiene 4 hilos detallados en las secciones anteriores.
+
+\begin{figure}[H]
+	\centering\includegraphics[scale=0.6]{Imagenes/block_comparision.png}\\
+\end{figure} 
+\begin{figure}[H]
+	\centering\includegraphics[scale=0.35]{Imagenes/block_change.png}\\
+	\caption{Campo y variación del campo obtenido 10[mm] aguas abajo del compósito en función del número de filas del compósito}
+	\label{fig:fieldblockchange}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Variación del campo con respecto a la composición volumétrica}
-Otro parámetro de interés para maximizar el cambio de señal recibida al cambiar las propiedades del compósito es la composición volumétrica, ya que esto podría determinar el porcentaje óptimo para obtener datos más precisos.
+Otro parámetro de interés para maximizar el cambio de señal recibida al modificar las propiedades del compósito es la composición volumétrica, ya que esto podría determinar el porcentaje óptimo para obtener datos más precisos.
 Se realizaron múltiples pruebas cambiando el número de hilos al interior de la matriz. El volumen de cada hilo es de $7.85\times 10^{-4}[mm^3]$ y el de la matriz de 43.2 [$mm^3$], por lo que la composición volumétrica es posible obtenerla a través de,
 
 $$\%Vol = nh\times\frac{Vol_h}{Vol_m}$$
@@ -1451,17 +1484,27 @@ Otros datos de interés es el tiempo que podría demorar la solución y esto est
 \section{Análisis y conclusiones} \label{sec:Analisis y conclusiones}
 En la sección anterior se mostraron los resultados obtenidos para las diferentes configuraciones seleccionadas para realizar las pruebas en la distribución de los hilos. En esta sección se analizarán los resultados.
 
-Para el caso de una configuración de pantalla se puede apreciar que existe un máximo de cambio de señal cuando los hilos se encuentran más juntos en el centro, por lo que se recomendaría posicionar los hilos lo más cerca posible. Este efecto podría deberse al hecho de que la antena se encuentra posicionada en el eje central del compósito por lo que al haber más hilos cercanos a este eje el campo podría verse más afectado. Además, se puede observar que para el porcentaje volumétrico existe un máximo con 0,0073\% (4 hilos) alcanzando un cambio de alrededor -90\%. Como es de suponer al aumentar el número de hilos la memoria necesaria para almacenar la resolución del problema aumenta, al igual que el número de iteraciones la memoria aumenta de forma lineal.  También se puede notar que al encontrarse los hilos más cercanos unos de otros es más difícil lograr la convergencia, siendo esta la mayor limitante del programa. Los problemas de convergencia no hacen posible calcular el campo cuando los hilos se encuentran demasiado cerca lo que hace imposible obtener información para distancias entre hilos inferiores a 1[mm], mayores composiciones volumétricas y para una configuración de bloque.
+Para el caso de una configuración de pantalla se puede apreciar que existe un máximo de cambio de señal cuando los hilos se encuentran a 1.6 [mm] con una variación en el módulo de 14.84 \%, Como se puede apreciar en la gráfica \ref{fig:field_change} al encontrarse a 0.8 [mm] existen variaciones de 12.48 \% siendo otro posible valor para posicionar los micro-hilos, el problema con esta última distancia entre hilos es que a pesar que el porcentaje de cambio es alto la diferencia es baja por lo que se dependería de una mejor resolución en el aparato de medición. La recomendación es de posicionar los hilos a una distancia de 1.6 [mm]. 
 
-Es importante mencionar que los hilos utilizados y las propiedades seleccionadas no son las que se seleccionarían para el diseño del sensor de tensiones mecánicas, esto debido a que estos hilos presentan, como se nombró anteriormente, anisotropía circunferencial lo que los vuelve buenos candidatos para un sensor de campo magnético externo y no de tensiones mecánicas, para este último caso sería necesaria una anisotropía axial o helicoidal. Además, la frecuencia seleccionada no presenta los mayores cambios en la permitividad lo que significaría mayores cambios en la señal recibida lo que se traduce en una mejor sensibilidad. Existen dos razones principalmente por las cuales no se utilizaron los valores óptimos. La primera de ellas corresponde a la falta de información existente con respecto a las propiedades de los hilos en particular permitividad, sobretodo cuando se desea calcular el cambio debido a una tensión mecánica. Por otro lado, la frecuencia no se seleccionó en el punto óptimo debido a los problemas de convergencia que presenta el código a causa de los altos valores de permitividad imaginaria que poseen los micro-hilos. Por lo que se puede observar en \cite{Wire_backgound} cuando se utilizan los hilos como sensores de tensión los valores de permitividad efectiva son menores a los utilizados, lo que da esperanza sobre la convergencia del programa si se utilizasen estos valores. Otra aproximación tomada es el hecho de no cambiar los valores de la permeabilidad magnética al someter los hilos a tensión, de todas maneras en ninguna referencia se ve dependencia entre estos dos parámetros. 
+Para el caso de una configuración de bloque, variando el número de filas, se puede ver que existe un máximo de variación en 2 filas. El problema en este caso es que la diferencia entre los valores y el cambio del campo son bajos alcanzando una variación máxima de tan solo 3.08 \%. Una posible razón de encontrar pequeñas variaciones es el hecho de que el espesor de la matriz es pequeño lo que hace necesario agregar filas muy cercanas unas de otras generando un comportamiento de bloque entre los hilos. Por otro lado, en la bibliografía no se encontró información relativa a añadir más filas en el compósito.
+
+Además, se puede observar que para el porcentaje volumétrico existe un máximo con 0,0109\% (6 hilos) alcanzando un cambio en el módulo de alrededor de 4.28\%. Este resultado coincide con la composición volumétrica utilizada en la cita \cite{Wire_theory_1} y en el estudio del cambio del campo al variar la distancia entre hilos. Otro valor de cambio importante se produce en 18.18\% (10 hilos) alcanzando un cambio en el módulo de -4.09\%, se prefiere la configuración de 6 hilos ya que la diferencia entre campos es mayor. Al aumentar el número de hilos la memoria necesaria para almacenar la resolución del problema aumenta prácticamente de forma lineal. También se puede notar que al aumentar el número de hilos la convergencia del problema se vuelve más demorosa.
+
+Para comparar los resultado se utilizó la frecuencia en que se presentaban mayores cambios y la que seleccionaría para el diseño del sensor. 
+
+Es importante mencionar que los hilos utilizados no son los que se seleccionarían para el diseño del sensor de tensiones mecánicas, esto debido a que estos hilos presentan, como se nombró anteriormente, anisotropía circunferencial lo que los vuelve buenos candidatos para un sensor de campo magnético externo y no de tensiones mecánicas, para este último caso sería necesaria una anisotropía axial o helicoidal. La principal razón de no utilizar en este estudio micro-hilos con la configuración deseada corresponde a la falta de información existente con respecto a las propiedades de los hilos, en particular permitividad, sobretodo cuando se desea calcular el cambio debido a una tensión mecánica. Otra aproximación tomada es el hecho de no cambiar los valores de la permeabilidad magnética al someter los hilos a tensión, de todas maneras en ninguna referencia se ve dependencia entre estos dos parámetros. 
 
 Un parámetro importante a tener en cuenta al momento de crear las geometrías es el hecho de que la matriz y los hilos poseen dimensiones muy diferentes lo que significa una gran diferencia en el tamaño de los elementos de ambas mallas generando problemas de convergencia y ensamblaje. 
 
 En el código propuesto sólo se consideró el cálculo del campo para el exterior del compósito debido a la naturaleza física de la experimentación que se realiza para este tipo de materiales.
 
-Se puede apreciar que el método de elementos de borde presenta grandes ventajas al momento de simular un fenómeno de este tipo, ya que, no es necesario una discretización de todo el espacio sino que sólo del borde de los objetos, disminuyendo el número de incógnitas, lo que hace posible evaluar el campo en cualquier punto una vez que se obtiene la solución al sistema de ecuaciones. Además, el uso de la librería BEM++ facilita enormemente el trabajo realizado siendo necesario sólo manipular los operadores, sin necesidad de hacer el trabajo de discretización directamente, obteniendo un ensamblaje eficiente y efectivo, ahorrando mucho tiempo de trabajo al momento de crear el programa.
+Se puede apreciar que el método de elementos de borde presenta grandes ventajas al momento de simular un fenómeno de este tipo, ya que, no es necesario una discretización de todo el espacio sino que sólo del borde de los objetos, disminuyendo el número de incógnitas, lo que hace posible evaluar el campo en cualquier punto una vez que se obtiene la solución al sistema de ecuaciones. Además, el uso de la librería BEM++ facilita enormemente el trabajo realizado siendo necesario sólo manipular los operadores, sin necesidad de hacer el trabajo de creación de operadores directamente, obteniendo un ensamblaje eficiente y efectivo, ahorrando mucho tiempo de trabajo al momento de crear el programa.
 
-Los errores que es posible encontrar, como es propio de cualquier método numérico computacional, son por truncamiento debido a la naturaleza de una aproximación por método numérico y error por redondeo debido a que no es posible almacenar dígitos infinitos en un computador. El error en la solución también es posible atribuirlo a que el modelo utilizado no sea el óptimo para resolver un sistema de este tipo. Se puede concluir que el método de elementos de borde es una excelente herramienta para aproximar ecuaciones de onda mediante la ecuación de Helmholtz. La mayor problemática son las propiedades propias de los materiales utilizados ya que debido a su particularidad hacen difícil la convergencia del programa.
+Los errores que es posible encontrar, como es propio de cualquier método numérico computacional, son por truncamiento debido a la naturaleza de una aproximación por método numérico y error por redondeo debido a que no es posible almacenar dígitos infinitos en un computador. El error en la solución también es posible atribuirlo a que el modelo utilizado no sea el óptimo para resolver un sistema de este tipo. Para este último punto se podría resolver el sistema a través de la ecuación de Maxwell detallada en la sección 4.1 y comparar los resultados obtenidos.
+
+Se puede concluir que el método de elementos de borde es una excelente herramienta para aproximar ecuaciones de onda mediante la ecuación de Helmholtz.
+
+La utilización de una solución al sistema matriz-vector por medio de GMRES hacen necesario un estudio de este método ya que variar sus parámetros a conveniencia pueden significar fuertes avances en el número de iteraciones. 
 
 El programa desarrollado en este trabajo podría significar una disminución en los costos asociados a los procesos iterativos que significan el diseño de un sensor inalámbrico como el propuesto. Además, podría utilizarse para casos de interés como el comportamiento de un campo producto de la dispersión provocada por una prótesis dental sometida a tensión, aplicaciones en la prueba de neumáticos de camiones, entre otros.
 
@@ -2012,7 +2055,7 @@ $$\nabla\cdot (\frac{\hat{\ell}}{\ell^2})=4\pi\delta^3(\vec{\ell})$$
 222 exe.write('\tprint it_count, frame.f_locals["resid"]\n') #Descomentar para ver numero iteracion y convergencia en cada iteracion
 223 
 224 exe.write('print("Shape of matrix: {0}".format(blocked_discretizado.shape))\n') #Tamano de la matriz
-225 exe.write('x,info = gmres(blocked_discretizado, rhs, tol=1e-5, callback = iteration_counter, maxiter = 50000)\n') #GMRES para resolver el sistema lineal
+225 exe.write('x,info = gmres(blocked_discretizado, rhs, tol=1e-5, callback = iteration_counter, maxiter = 50000, restart = 5000)\n') #GMRES para resolver el sistema lineal
 226 exe.write('print("El sistema fue resuelto en {0} iteraciones".format(it_count))\n') #Numero de iteraciones
 227 
 228 exe.write('np.savetxt("Solucion.out", x, delimiter=",")\n') #Guardando solucion en archivo txt
@@ -2653,7 +2696,7 @@ $$\nabla\cdot (\frac{\hat{\ell}}{\ell^2})=4\pi\delta^3(\vec{\ell})$$
 585     array_frame = np.append(array_frame, frame.f_locals["resid"])
 586     print it_count, frame.f_locals["resid"]
 587 print("Shape of matrix: {0}".format(blocked_discretizado.shape))
-588 x,info = gmres(blocked_discretizado, rhs, tol=1e-5, callback = iteration_counter, maxiter = 50000)
+588 x,info = gmres(blocked_discretizado, rhs, tol=1e-5, callback = iteration_counter, maxiter = 50000, restart = 5000)
 589 print("El sistema fue resuelto en {0} iteraciones".format(it_count))
 590 np.savetxt("Solucion.out", x, delimiter=",")
 591 

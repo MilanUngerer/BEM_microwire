@@ -219,10 +219,10 @@ exe.write('\tit_count += 1\n')
 exe.write('\tframe = inspect.currentframe().f_back\n')
 exe.write('\tarray_it = np.append(array_it, it_count)\n')
 exe.write('\tarray_frame = np.append(array_frame, frame.f_locals["resid"])\n')
-exe.write('\tprint it_count, frame.f_locals["resid"]\n') #Descomentar para ver numero iteracion y convergencia en cada iteracion
+#exe.write('\tprint it_count, frame.f_locals["resid"]\n') #Descomentar para ver numero iteracion y convergencia en cada iteracion
 
 exe.write('print("Shape of matrix: {0}".format(blocked_discretizado.shape))\n') #Tamano de la matriz
-exe.write('x,info = gmres(blocked_discretizado, rhs, tol=1e-5, callback = iteration_counter, maxiter = 50000)\n') #GMRES para resolver el sistema lineal
+exe.write('x,info = gmres(blocked_discretizado, rhs, tol=1e-5, callback = iteration_counter, maxiter = 50000, restart = 5000)\n') #GMRES para resolver el sistema lineal
 exe.write('print("El sistema fue resuelto en {0} iteraciones".format(it_count))\n') #Numero de iteraciones
 
 exe.write('np.savetxt("Solucion.out", x, delimiter=",")\n') #Guardando solucion en archivo txt
